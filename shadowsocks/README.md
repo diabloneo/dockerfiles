@@ -1,6 +1,6 @@
 ## 声明
 
-从[](https://github.com/mritd/dockerfile) copy来的，增加了simple-obfs插件。
+从[https://github.com/mritd/dockerfile](https://github.com/mritd/dockerfile) copy来的，增加了simple-obfs插件。
 
 ## shadowsocks
 
