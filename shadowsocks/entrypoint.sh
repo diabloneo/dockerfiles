@@ -31,7 +31,12 @@ fi
 echo -e "\033[32mStarting shadowsocks......\033[0m"
 if [ "$SS_CONFIG" != "" ]; then
     if [[ ${OBFS_ENABLE} = "true" ]]; then
-        ${SS_MODULE} ${SS_CONFIG} --plugin obfs-local --plugin-opts "obfs=http;obfs-host=www.bing.com"
+        if [[ ${SS_MODULE} = "ss-local" ]]; then
+            plugin="obfs-local"
+        else
+            plugin="obfs-server"
+        fi
+        ${SS_MODULE} ${SS_CONFIG} --plugin ${plugin} --plugin-opts "obfs=http;obfs-host=www.bing.com"
     else
         $SS_MODULE $SS_CONFIG
     fi
